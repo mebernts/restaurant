@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using resturantAPI.Models;
 
 namespace ResturantAPI
 {
@@ -25,7 +27,9 @@ namespace ResturantAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddDbContext<DishesContext>(
+                options => options.UseSqlite("Data Source=Dishes.db")
+            );
             services.AddCors(
                 options => options.AddPolicy("AllowAll",
                     builder => builder
