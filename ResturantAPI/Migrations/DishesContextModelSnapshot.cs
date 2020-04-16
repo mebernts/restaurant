@@ -17,8 +17,9 @@ namespace ResturantAPI.Migrations
 
             modelBuilder.Entity("resturantAPI.Models.Appertizer", b =>
                 {
-                    b.Property<string>("name")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ImageSrc")
                         .HasColumnType("TEXT");
@@ -35,15 +36,19 @@ namespace ResturantAPI.Migrations
                     b.Property<string>("description")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("name");
+                    b.Property<string>("name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Appertizer");
                 });
 
             modelBuilder.Entity("resturantAPI.Models.Dishes", b =>
                 {
-                    b.Property<string>("name")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ImageSrc")
                         .HasColumnType("TEXT");
@@ -60,15 +65,19 @@ namespace ResturantAPI.Migrations
                     b.Property<string>("description")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("name");
+                    b.Property<string>("name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
 
                     b.ToTable("Dishes");
                 });
 
             modelBuilder.Entity("resturantAPI.Models.Drinks", b =>
                 {
-                    b.Property<string>("name")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ImageSrc")
                         .HasColumnType("TEXT");
@@ -85,7 +94,10 @@ namespace ResturantAPI.Migrations
                     b.Property<string>("description")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("name");
+                    b.Property<string>("name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Drinks");
                 });

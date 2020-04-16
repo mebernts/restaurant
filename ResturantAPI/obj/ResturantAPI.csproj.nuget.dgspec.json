@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pernille\\Documents\\GitHub\\restaurant\\ResturantAPI\\ResturantAPI.csproj": {}
+    "C:\\Users\\mareg\\Desktop\\restaurant\\ResturantAPI\\ResturantAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pernille\\Documents\\GitHub\\restaurant\\ResturantAPI\\ResturantAPI.csproj": {
+    "C:\\Users\\mareg\\Desktop\\restaurant\\ResturantAPI\\ResturantAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pernille\\Documents\\GitHub\\restaurant\\ResturantAPI\\ResturantAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mareg\\Desktop\\restaurant\\ResturantAPI\\ResturantAPI.csproj",
         "projectName": "ResturantAPI",
-        "projectPath": "C:\\Users\\Pernille\\Documents\\GitHub\\restaurant\\ResturantAPI\\ResturantAPI.csproj",
-        "packagesPath": "C:\\Users\\Pernille\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pernille\\Documents\\GitHub\\restaurant\\ResturantAPI\\obj\\",
+        "projectPath": "C:\\Users\\mareg\\Desktop\\restaurant\\ResturantAPI\\ResturantAPI.csproj",
+        "packagesPath": "C:\\Users\\mareg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mareg\\Desktop\\restaurant\\ResturantAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pernille\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\mareg\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
