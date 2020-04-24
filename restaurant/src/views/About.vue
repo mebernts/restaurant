@@ -1,5 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>Om oss</h1>
+    <h2>Følg oss på sosiale medier:</h2>
+    <p>@Instagram @Twitter @Facebook</p>
   </div>
 </template>
