@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row>
-            <v-col>
+            <v-col cols="12" sm="6" lg="4" v-for="drink in drinks" :key="drink.id">
                 <DrinkItem
                 :id="drink.id"
                 :name="drink.name"
@@ -14,7 +14,7 @@
 
 <script>
 import axios from 'axios'
-import AppertizerItem from './DrinkItem.vue'
+import DrinkItem from './DrinkItem.vue'
 export default {
     data(){
         return{
