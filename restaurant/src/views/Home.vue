@@ -1,6 +1,10 @@
 <template>
 <div>
-  This is the Home Page
+  <v-img class="imgFluid" src="https://localhost:5001/images/header.jpg"
+  width="100%"
+  height="300px">
+   <h1 id="header">Velkommen</h1>
+  </v-img>
 </div>
 
 </template>
@@ -11,3 +15,11 @@ export default {
   name: 'Home',
 }
 </script>
+
+<style scoped>
+#header{
+  color: white;
+  text-align: center;
+}
+
+</style>
