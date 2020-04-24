@@ -18,7 +18,7 @@ import DrinkItem from './DrinkItem.vue'
 export default {
     data(){
         return{
-            drinks: [{id: 400, name: "TestName", price: 35, category: "testCategory"}]
+            drinks: [{id: 400, name: "TestNameDrink", price: 35, category: "testCategory"}]
         }
     },
 
@@ -26,7 +26,7 @@ export default {
         axios.get("https://localhost:5001/resturant/drinks")
         .then(result =>{
             console.log(result.data);
-            this.dishes = result.data;
+            this.drinks = result.data;
         }) // axios that gets information from the database
     },
     components:{
