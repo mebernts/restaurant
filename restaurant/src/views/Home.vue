@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-img class="imgFluid" src="https://localhost:5001/images/header.jpg"
+  <v-img class="imgFluid" src="@/assets/images/header.jpg"
   width="100%"
   height="300px">
    <h1 id="header">Velkommen</h1>
