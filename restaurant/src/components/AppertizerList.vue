@@ -23,8 +23,14 @@ export default {
         return{
             appertizers:[{id: 999, name: "TestName", description: "TestDiscription", allergies: "TestAllergies", price: 106, imageSrc:"", category:"testCategory"}]
         }
-    }, // end data
-    
+    },
+    created(){
+        axios.get("https://localhost:5001/resturant/appertizer")
+        .then(result =>{
+            console.log(result.data);
+            this.dishes = result.data;
+        }) // axios that gets information from the database
+    },
     components:{
         AppertizerItem
     }

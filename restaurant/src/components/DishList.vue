@@ -23,8 +23,14 @@ export default {
         return{
             Dishes:[{id: 100, name: "TestName", description: "TestDiscription", allergies: "TestAllergies", price: 100, imageSrc:"", category:"testCategory"}]
         }
-    }, // end data
-    
+    },
+    created(){
+        axios.get("https://localhost:5001/resturant/dishes")
+        .then(result =>{
+            console.log(result.data);
+            this.dishes = result.data;
+        }) // axios that gets information from the database
+    },
     components:{
         DishItem
     }
