@@ -3,7 +3,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <div id="app">
     <TheNavigation/>
-    <router-view/>
+    <v-content>
+      <v-container>
+        <router-view/>
+        </v-container>
+    </v-content>
   </div>
   </v-app>
 </template>
