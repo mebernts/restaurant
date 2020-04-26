@@ -1,13 +1,15 @@
 const FooterStore = {
     state: {
         footerinfo:[
-           {id:100, adress: "Oslogate 30", telfon: 20201020}
-
+           {id: 100, contact:"Kontakt info"},
+           {id:101, adress: "Oslogate 30", telefon: 20201020, mail:"italia@email.com"},
+           {id: 102, åpningstider: "Åpningstider"},
+           {id: 103, monday: "Mandag: Åpen fra 14", tuesdaySaturday: "Tirsdag-Lørdag: Åpen fra 12", sunday: "Søndag: Stengt"}
         ]
     },
     getFooterinfo(){
         return this.state.footerinfo.map(footer => footer);
-    }
+    },
 }
 
 export default FooterStore;
