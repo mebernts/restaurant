@@ -21,7 +21,7 @@ import DishItem from './DishItem.vue'
 export default {
     data(){
         return{
-            Dishes:[{id: 100, name: "TestNameDish", description: "TestDiscription", allergies: "TestAllergies", price: 100, imageSrc:"", category:"testCategory"}]
+            dishes:[{id: 100, name: "TestNameDish", description: "TestDiscription", allergies: "TestAllergies", price: 100, imageSrc:"", category:"testCategory"}]
         }
     },
     created(){
