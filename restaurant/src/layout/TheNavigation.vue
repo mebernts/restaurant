@@ -2,7 +2,7 @@
     <nav>
         <v-toolbar color="blue-grey ">
             <v-icon color="white">mdi-crown</v-icon>
-            <v-toolbar-title id="italy">Italia</v-toolbar-title>
+            <v-toolbar-title id="italy" class="white--text">Italia</v-toolbar-title>
             <v-icon color="white">mdi-crown</v-icon>
             <!--<v-icon>mdi-chef-hat</v-icon>-->
             <v-spacer></v-spacer>
@@ -20,6 +20,5 @@
     /*font-family: 'Lora', serif;*/
     font-family: 'Dancing Script', cursive;
     font-size: 2.3rem;
-    color: white;
 }
 </style>
