@@ -1,13 +1,18 @@
 <template>
   <v-footer 
   id="footer"
-  color="blue-grey darken-3"
-  padless
-  height="100px">
-          <h3 class="white--text">Italia</h3>
-          <v-spacer></v-spacer>
-        <ul class="white--text">
-            <li class="text-center" v-for="footer in footerinfo" :key="footer.id">
+  color="blue-grey darken-3">
+  <v-card
+  class="flex"
+  flat
+  tile>
+      <v-card-title 
+      id="italy" 
+      class="blue-grey darken-3 white--text">Italia</v-card-title>
+      <v-card-text 
+      class="blue-grey darken-3">
+          <ul>
+          <li class="text-center white--text" v-for="footer in footerinfo" :key="footer.id">
                 {{footer.contact}}
                 {{footer.adress}}
                 {{footer.telefon}}
@@ -16,17 +21,19 @@
                 {{footer.monday}}
                 {{footer.tuesdaySaturday}}
                 {{footer.sunday}}
-            </li>
-        </ul>
-        <v-spacer></v-spacer>
-        <v-row>
-        <v-col>
-        <h3 class="white--text">Sosiale medier</h3>
-        <v-icon size="30px" color="white">mdi-facebook</v-icon>
-        <v-icon size="30px" class= "icon" color="white">mdi-instagram</v-icon>
-        <v-icon size="30px" color="white">mdi-twitter</v-icon>
-        </v-col>
-        </v-row>
+          </li>
+      </ul>
+      </v-card-text>
+      <v-divider></v-divider>
+      <v-card-text 
+      class="text-center blue-grey darken-3">
+      <v-icon size="30px" color= "light-blue lighten-3">mdi-facebook</v-icon>
+      <v-icon size="30px" color="light-blue lighten-3">mdi-instagram</v-icon>
+      <v-icon size="30px" color="light-blue lighten-3">mdi-twitter</v-icon>
+      </v-card-text>
+
+  </v-card>
+    
     </v-footer>
 </template>
 
@@ -43,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-.italy{
+#italy{
     font-family: 'Dancing Script', cursive;
 }
 #footer ul{
