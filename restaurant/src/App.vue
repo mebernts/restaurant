@@ -8,15 +8,18 @@
         <router-view/>
         </v-container>
     </v-content>
+    <TheFooter/>
   </div>
   </v-app>
 </template>
 <script>
 import TheNavigation from './layout/TheNavigation.vue'
+import TheFooter from './layout/TheFooter.vue'
 export default {
    name: 'App',
     components: {
-      TheNavigation
+      TheNavigation,
+      TheFooter
     } 
 }
 </script>

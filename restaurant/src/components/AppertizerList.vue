@@ -1,7 +1,7 @@
 <template>
    <div>
        <v-row>
-           <v-col>
+           <v-col cols="12" sm="6" lg="4" v-for="appertizer in appertizers" :key="appertizer.id">
                <AppertizerItem
                :id="appertizer.id"
                :name="appertizer.name"
@@ -21,14 +21,14 @@ import AppertizerItem from './AppertizerItem.vue'
 export default {
     data(){
         return{
-            appertizers:[{id: 999, name: "TestName", description: "TestDiscription", allergies: "TestAllergies", price: 106, imageSrc:"", category:"testCategory"}]
+            appertizers:[{id: 999, name: "TestNameAppertizer", description: "TestDiscription", allergies: "TestAllergies", price: 106, imageSrc:"", category:"testCategory"}]
         }
     },
     created(){
         axios.get("https://localhost:5001/resturant/appertizer")
         .then(result =>{
             console.log(result.data);
-            this.dishes = result.data;
+            this.appertizers = result.data;
         }) // axios that gets information from the database
     },
     components:{

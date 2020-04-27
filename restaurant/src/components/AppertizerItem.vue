@@ -2,15 +2,14 @@
     <article>
         <v-card>
             <v-img
-            :src="`https://localhost:5001/images/${imageSrc}`">
+            :src="`https://localhost:5001/images/${imageSrc}`"
+            height="200px">
             </v-img>
             <v-card-title>{{name}}</v-card-title>
-            <v-card-text>
-                {{description}}
-                {{allergies}}
-                {{price}}
-                {{category}}
-            </v-card-text>
+            <v-card-text>{{description}}</v-card-text>
+            <v-card-text>{{allergies}}</v-card-text>
+            <v-card-text>{{price}}</v-card-text>
+            <v-card-text>{{category}}</v-card-text>
         </v-card>
     </article>
 </template>
