@@ -7,7 +7,7 @@
   flat>
       <v-card-title 
       id="italy" 
-      class="blue-grey darken-3 white--text">Italia</v-card-title>
+      class="blue-grey darken-3 white--text justify-center">Italia</v-card-title>
       <v-card-text 
       class="blue-grey darken-3">
           <ul>
@@ -51,6 +51,7 @@ export default {
 <style scoped>
 #italy{
     font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
 }
 #footer ul{
     list-style: none;
