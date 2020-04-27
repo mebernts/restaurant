@@ -4,8 +4,7 @@
   color="blue-grey darken-3">
   <v-card
   class="flex"
-  flat
-  tile>
+  flat>
       <v-card-title 
       id="italy" 
       class="blue-grey darken-3 white--text">Italia</v-card-title>
