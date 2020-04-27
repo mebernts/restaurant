@@ -22,6 +22,11 @@ Vue.use(VueRouter)
   path: '/menu',
   name: 'Menu',
   component: () => import(/* webpackChunkName: "menu" */ '../views/menu.vue')
+ },
+ {
+   path: '/admin',
+   name: "Admin",
+   component: () => import(/* webpackChunkName: "admin" */ '../views/Admin.vue')
  }
 ]
 

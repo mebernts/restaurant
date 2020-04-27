@@ -1,33 +1,52 @@
 <template>
-  <div>
-    <v-form>
-      <v-row>
-        <v-col cols="12" lg="4" class="mx-auto">
-          <v-select
-            v-model="dishCategorySelected"
-            :items="dishCategory"
-            label="Kategori 1"
-            required
-          ></v-select>
-          <v-text-field v-model="newDish.name" label="Navn" clearable></v-text-field>
-          <v-textarea v-model="newDish.description" label="Description" auto-grow></v-textarea>
-          <v-text-field v-model.number="newDish.price" label="Pris" prefix="kr"></v-text-field>
-          <v-text-field v-model="newDish.allergies" label="Allergier"></v-text-field>
-          <v-select v-model="newDish.category" label="Kategori" :items="categoryList"></v-select>
-          <v-file-input v-model="file" show-size></v-file-input>
-          <v-btn @click="postDish">Lagre</v-btn>
-          <p>{{postStatus}}</p>
-        </v-col>
-      </v-row>
-    </v-form>
-  </div>
+  <v-row>
+    <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-card justify="center">
+        <v-card-title>
+          <span>New Dish</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <v-select v-model="dishCategorySelected" :items="dishCategory" label="Table"></v-select>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-text-field v-model="newDish.name" label="Name"></v-text-field>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-select v-model="newDish.category" :items="categoryList" label="Category" ></v-select>
+              </v-col>
+              <v-col cols="12">
+                <v-textarea v-model="newDish.description" label="Description" auto-grow></v-textarea>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-text-field v-model.number="newDish.price" label="Price" prefix="kr"></v-text-field>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-text-field v-model="newDish.allergies" label="Allergies"></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-file-input v-model="file" show-size></v-file-input>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn @click="close">Cancel</v-btn>
+          <v-btn @click="postDish">Save</v-btn>
+          <!--Endre click event til post-->
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
 </template>
 
 <script>
 import axios from "axios";
-
 export default {
-  name: "DishForm",
+  name: "DishFormDialog",
   data() {
     return {
       newDish: {
@@ -44,24 +63,36 @@ export default {
       categoryList: [
         "Antipasti",
         "Pizza Rossa",
-        "Pizza Bliance" /*rettskriv*/,
-        "Drinks"
-      ],
-      postStatus: "Ingenting er postet enda"
+        "Pizza Bianche",
+        "la Pasta",
+        "Brus",
+        "Mineralvann",
+        "Te",
+        "Kaffe"
+      ]
     };
   },
+  props: {
+    dialog: {
+      default: false
+    }
+  },
   methods: {
+    close() {
+      this.$emit("update:dialog", false);
+    },
     postDish() {
-      if (this.dishCategorySelected == "Appertizer") {// Starts post to appertizer code
-        
+      if (this.dishCategorySelected == "Dishes") {
         if (this.file === null) {
           this.newDish.imageSrc = null;
+
           axios
-            .post("https://localhost:5001/resturant/postAppertizer", this.newDish)
+            .post("https://localhost:5001/resturant/PostDish", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
             })
+
             .catch(error => {
               console.log(error);
             });
@@ -71,7 +102,7 @@ export default {
           this.newDish.imageSrc = this.file.name;
 
           axios
-            .post("https://localhost:5001/Resturant/postAppertizer", this.newDish)
+            .post("https://localhost:5001/Resturant/Postdish", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
@@ -87,18 +118,17 @@ export default {
               console.log(error);
             });
         }
-        //End of appertizer code
-      } else if (this.dishCategorySelected == "Drinks") {// Starts post to drinks code
-        
+      } else if (this.dishCategorySelected === "Drinks") {
         if (this.file === null) {
           this.newDish.imageSrc = null;
 
           axios
-            .post("https://localhost:5001/resturant/postDrink", this.newDish)
+            .post("https://localhost:5001/resturant/postdrink", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
             })
+
             .catch(error => {
               console.log(error);
             });
@@ -108,7 +138,7 @@ export default {
           this.newDish.imageSrc = this.file.name;
 
           axios
-            .post("https://localhost:5001/Resturant/postDrink", this.newDish)
+            .post("https://localhost:5001/Resturant/postdrink", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
@@ -123,19 +153,21 @@ export default {
             .catch(error => {
               console.log(error);
             });
-          // end of drinks code
         }
-      } else if (this.dishCategorySelected == "Dishes") {// Starts post to dishes code
-        
+      } else if (this.dishCategorySelected === "Appertizer") {
         if (this.file === null) {
           this.newDish.imageSrc = null;
 
           axios
-            .post("https://localhost:5001/resturant/postdish", this.newDish)
+            .post(
+              "https://localhost:5001/resturant/postappertizer",
+              this.newDish
+            )
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
             })
+
             .catch(error => {
               console.log(error);
             });
@@ -145,7 +177,10 @@ export default {
           this.newDish.imageSrc = this.file.name;
 
           axios
-            .post("https://localhost:5001/Resturant/postdish", this.newDish)
+            .post(
+              "https://localhost:5001/Resturant/postappertizer",
+              this.newDish
+            )
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
@@ -162,7 +197,10 @@ export default {
             });
         }
       }
-      // End of Dishes code
+      alert("A new Dish has been added!")
+      this.$emit("update:dialog", false);
+
+      // base til hvordan det fungerer
     }
   }
 };

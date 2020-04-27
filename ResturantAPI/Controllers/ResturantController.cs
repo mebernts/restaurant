@@ -57,7 +57,6 @@ namespace ResturantAPI.Controllers
             List<Dishes> dishesList = await _context.Dishes
             .Where(dishes => dishes.category.Contains(category))
             .ToListAsync();
-
             return dishesList;
         }
 

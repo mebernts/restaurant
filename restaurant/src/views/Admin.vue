@@ -1,14 +1,53 @@
 <template>
   <div>
-    <h1>This is the Admin Page, Only testing so far</h1>
-    <DishForm />
+    <v-row>
+      <v-col cols="10 mx-auto">
+        <v-toolbar>
+          <v-toolbar-title>Admin</v-toolbar-title>
+        </v-toolbar>
+        <v-col cols="12">
+          <v-btn class="mr-2" @click="component='AppertizerTable'">Appertizers</v-btn>
+          <v-btn class="mr-2" @click="component='DishTable'">Main Dishes</v-btn>
+          <v-btn class="mr-2" @click="component='DrinkTable'">Drinks</v-btn>
+          <v-btn class="mr-2 primary Dark" @click="dialog=true" >Add new Dish</v-btn>
+          <v-btn @click="reRender"><v-icon>mdi-refresh</v-icon></v-btn>
+          <DishFormDialog :dialog.sync="dialog"/>
+        </v-col>
+          
+        
+
+        <!--   <v-btn class="fixed right" @click="component='DishFormDialog'">New Dish</v-btn>-->
+      </v-col>
+
+      <component v-bind:is="component" class="mx-auto" :key="componentKey"></component>
+    </v-row>
   </div>
 </template>
 
 <script>
-import DishForm from "../components/DishForm.vue";
+import DishFormDialog from "../components/DishFormDialog.vue";
+import DishTable from "../components/DishTable.vue";
+import AppertizerTable from "@/components/AppertizerTable.vue";
+import DrinkTable from "@/components/DrinkTable.vue";
 export default {
   name: "Admin",
-  components: { DishForm }
+  data() {
+    return {
+      dialog: false,
+      component: "DishTable",
+      componentKey: 0
+    };
+  },
+  watch: {
+    dialog(val) {
+      val || this.close();
+    }
+  },
+  components: { DishFormDialog, DishTable, AppertizerTable, DrinkTable },
+  methods: {
+    reRender(){
+      this.componentKey += 1
+    }
+  }
 };
 </script>
