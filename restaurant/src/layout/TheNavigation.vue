@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-toolbar color="blue-grey ">
+        <v-toolbar color="blue-grey darken-3">
             <v-icon color="white">mdi-crown</v-icon>
             <v-toolbar-title id="italy" class="white--text">Italia</v-toolbar-title>
             <v-icon color="white">mdi-crown</v-icon>
