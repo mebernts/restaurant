@@ -43,17 +43,19 @@ export default {
         { text: "Allergies", value: "allergies" },
         { text: "Price (KR)", value: "price" },
         { text: "ImageSrc", value: "imageSrc" },
-        { text: "Category", value: "category", width: "150px" },
+        { text: "Category", value: "category" },
         { text: "Actions", value: "actions", sortable: false, width: "200px" }
       ],
-      dishes: []
+      dishes: [],
+      editId: 0,
+      editTable: ""
     };
   },
   components: {
     EditFormDialog
   },
   created() {
-    axios.get("https://localhost:5001/resturant/appertizer").then(result => {
+    axios.get("https://localhost:5001/resturant/Appertizer").then(result => {
       //console.log(result.data);
       this.dishes = result.data;
     }); // axios that gets information from the database

@@ -133,7 +133,7 @@ namespace ResturantAPI.Controllers
 
         [HttpPut]
         [Route("[action]")]
-        public async Task<Appertizer> PutDessert(Appertizer changeAppertizer)
+        public async Task<Appertizer> PutAppertizer(Appertizer changeAppertizer)
         {
             _context.Update(changeAppertizer);
             await _context.SaveChangesAsync();
