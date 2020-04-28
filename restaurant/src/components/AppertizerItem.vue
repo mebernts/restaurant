@@ -10,6 +10,12 @@
             <v-card-text>{{allergies}}</v-card-text>
             <v-card-text>{{price}}</v-card-text>
             <v-card-text>{{category}}</v-card-text>
+
+             <v-rating
+             color="amber"
+             half-increments
+             size="20">
+             </v-rating>
         </v-card>
     </article>
 </template>

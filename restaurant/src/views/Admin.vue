@@ -2,7 +2,7 @@
   <div>
     <v-row>
       <v-container cols="12">
-        <v-col cols="12" md="8" class="mx-auto">
+        <v-col cols="12" class="mx-auto">
           <v-toolbar>
             <v-toolbar-title>Admin</v-toolbar-title>
           </v-toolbar>
@@ -17,7 +17,7 @@
             <DishFormDialog :dialog.sync="dialog" />
           </v-col>
         </v-col>
-        <v-col cols="12" md="8" class="mx-auto" >
+        <v-col cols="12" class="mx-auto" >
           <component v-bind:is="component"  :key="componentKey"></component>
         </v-col>
       </v-container>
@@ -41,6 +41,9 @@ export default {
   },
   watch: {
     dialog(val) {
+      val || this.close();
+    },
+    dialog2(val) {
       val || this.close();
     }
   },
