@@ -5,7 +5,9 @@
     <TheNavigation/>
     <v-content>
       <v-container>
+        <keep-alive>
         <router-view/>
+        </keep-alive>
         </v-container>
     </v-content>
     <TheFooter/>
