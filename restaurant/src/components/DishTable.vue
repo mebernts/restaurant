@@ -57,7 +57,6 @@ export default {
   },
   created() {
     axios.get("https://localhost:5001/resturant/dishes").then(result => {
-      //console.log(result.data);
       this.dishes = result.data;
     }); // axios that gets information from the database
   },
@@ -68,9 +67,6 @@ export default {
       );
       axios
         .delete(`https://localhost:5001/resturant/deleteDish/${item.id}`)
-        .then(result => {
-          this.deleteStatus = JSON.stringify(result.data);
-        })
         .catch(error => {
           console.log(error);
         });

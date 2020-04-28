@@ -36,7 +36,6 @@
           <v-spacer></v-spacer>
           <v-btn @click="close">Cancel</v-btn>
           <v-btn @click="postDish">Save</v-btn>
-          <!--Endre click event til post-->
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -88,11 +87,6 @@ export default {
 
           axios
             .post("https://localhost:5001/resturant/PostDish", this.newDish)
-            .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-            })
-
             .catch(error => {
               console.log(error);
             });
@@ -104,9 +98,6 @@ export default {
           axios
             .post("https://localhost:5001/Resturant/Postdish", this.newDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-
               axios({
                 method: "POST",
                 url: "https://localhost:5001/resturantadmin/uploadimage",
@@ -124,11 +115,6 @@ export default {
 
           axios
             .post("https://localhost:5001/resturant/postdrink", this.newDish)
-            .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-            })
-
             .catch(error => {
               console.log(error);
             });
@@ -140,9 +126,6 @@ export default {
           axios
             .post("https://localhost:5001/Resturant/postdrink", this.newDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-
               axios({
                 method: "POST",
                 url: "https://localhost:5001/resturantadmin/uploadimage",
@@ -158,16 +141,7 @@ export default {
         if (this.file === null) {
           this.newDish.imageSrc = null;
 
-          axios
-            .post(
-              "https://localhost:5001/resturant/postappertizer",
-              this.newDish
-            )
-            .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-            })
-
+          axios.post("https://localhost:5001/resturant/postappertizer", this.newDish)
             .catch(error => {
               console.log(error);
             });
@@ -177,14 +151,8 @@ export default {
           this.newDish.imageSrc = this.file.name;
 
           axios
-            .post(
-              "https://localhost:5001/Resturant/postappertizer",
-              this.newDish
-            )
+            .post("https://localhost:5001/Resturant/postappertizer", this.newDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-
               axios({
                 method: "POST",
                 url: "https://localhost:5001/resturantadmin/uploadimage",

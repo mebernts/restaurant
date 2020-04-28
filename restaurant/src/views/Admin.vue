@@ -1,25 +1,26 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="10 mx-auto">
-        <v-toolbar>
-          <v-toolbar-title>Admin</v-toolbar-title>
-        </v-toolbar>
-        <v-col cols="12">
-          <v-btn class="mr-2" @click="component='AppertizerTable'">Appertizers</v-btn>
-          <v-btn class="mr-2" @click="component='DishTable'">Main Dishes</v-btn>
-          <v-btn class="mr-2" @click="component='DrinkTable'">Drinks</v-btn>
-          <v-btn class="mr-2 primary Dark" @click="dialog=true" >Add new Dish</v-btn>
-          <v-btn @click="reRender"><v-icon>mdi-refresh</v-icon></v-btn>
-          <DishFormDialog :dialog.sync="dialog"/>
+      <v-container cols="12"  >
+        <v-col cols="12" md="8" class="mx-auto">
+          <v-toolbar>
+            <v-toolbar-title>Admin</v-toolbar-title>
+          </v-toolbar>
+          <v-col cols="12" md="8">
+            <v-btn class="mr-2" @click="component='AppertizerTable'">Appertizers</v-btn>
+            <v-btn class="mr-2" @click="component='DishTable'">Main Dishes</v-btn>
+            <v-btn class="mr-2" @click="component='DrinkTable'">Drinks</v-btn>
+            <v-btn class="mr-2 primary Dark" @click="dialog=true">Add new Dish</v-btn>
+            <v-btn @click="reRender">
+              <v-icon>mdi-refresh</v-icon>
+            </v-btn>
+            <DishFormDialog :dialog.sync="dialog" />
+          </v-col>
         </v-col>
-          
-        
-
-        <!--   <v-btn class="fixed right" @click="component='DishFormDialog'">New Dish</v-btn>-->
-      </v-col>
-
-      <component v-bind:is="component" class="mx-auto" :key="componentKey"></component>
+        <v-col cols="12" md="8" class="mx-auto">
+          <component v-bind:is="component" class="mx-auto" :key="componentKey"></component>
+        </v-col>
+      </v-container>
     </v-row>
   </div>
 </template>
@@ -34,7 +35,7 @@ export default {
   data() {
     return {
       dialog: false,
-      component: "DishTable",
+      component: "AppertizerTable",
       componentKey: 0
     };
   },
@@ -45,8 +46,8 @@ export default {
   },
   components: { DishFormDialog, DishTable, AppertizerTable, DrinkTable },
   methods: {
-    reRender(){
-      this.componentKey += 1
+    reRender() {
+      this.componentKey += 1;
     }
   }
 };
