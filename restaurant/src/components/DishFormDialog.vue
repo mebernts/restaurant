@@ -86,7 +86,7 @@ export default {
           this.newDish.imageSrc = null;
 
           axios
-            .post("https://localhost:5001/resturant/PostDish", this.newDish)
+            .post("https://localhost:5001/resturant/Postdish", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
@@ -158,10 +158,7 @@ export default {
           this.newDish.imageSrc = null;
 
           axios
-            .post(
-              "https://localhost:5001/resturant/postappertizer",
-              this.newDish
-            )
+            .post("https://localhost:5001/resturant/postappertizer", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
@@ -176,10 +173,7 @@ export default {
           this.newDish.imageSrc = this.file.name;
 
           axios
-            .post(
-              "https://localhost:5001/Resturant/postappertizer",
-              this.newDish
-            )
+            .post("https://localhost:5001/Resturant/postappertizer", this.newDish)
             .then(result => {
               this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
@@ -195,10 +189,11 @@ export default {
               console.log(error);
             });
         }
+        
       }
       alert("A new Dish has been added!")
-      this.$emit("update:dialog", false);
-
+      this.$emit('update:dialog', false);
+        //this.$router.go()
       // base til hvordan det fungerer
     }
   }

@@ -41,7 +41,7 @@ export default {
         },
         { text: "Drinks", value: "name" },
         { text: "Price (KR)", value: "price" },
-        { text: "Category", value: "category", width: "150px"},
+        { text: "Category", value: "category"},
         {text: "Actions", value: 'actions', sortable:false, width: "200px"}
       ],
       dishes: [],

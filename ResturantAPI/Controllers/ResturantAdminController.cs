@@ -1,17 +1,23 @@
-using System.IO;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using System.IO;
 using resturantAPI.Models;
 
-namespace ResturantAPI
+namespace ResturantAPI.Controllers
 {
-    public class ResturantAdminController : ControllerBase{
+    [ApiController]
+    [Route("[controller]")]
+
+    public class ResturantAdminController : ControllerBase
+    {
         private readonly DishesContext _context;
-        
         private readonly IWebHostEnvironment _hosting;
-        
-        public ResturantAdminController(DishesContext context,IWebHostEnvironment hosting)
+
+        public ResturantAdminController(DishesContext context, IWebHostEnvironment hosting)
         {
             _context = context;
             _hosting = hosting;
@@ -19,12 +25,15 @@ namespace ResturantAPI
 
         [HttpPost]
         [Route("[action]")]
-        public void UploadImage(IFormFile file){
+        public void UploadImage(IFormFile file)
+        {
             string webRootPath = _hosting.WebRootPath;
             string absolutePath = Path.Combine($"{webRootPath}/images/{file.FileName}");
-            using(var fileStream = new FileStream( absolutePath, FileMode.Create)){
-                file.CopyTo( fileStream);
+            using (var fileStream = new FileStream(absolutePath, FileMode.Create))
+            {
+                file.CopyTo(fileStream);
             }
         }
+
     }
 }
