@@ -1,8 +1,11 @@
 <template>
     <div>
-        <h1>This the menu</h1>
+        <h1>This is the menu</h1>
+        <h2>Appetizers</h2>
         <AppertizerList/>
+        <h2>Dishes</h2>
         <DishList/>
+        <h2>Drinks</h2>
         <DrinkList/>
     </div>
 </template>
