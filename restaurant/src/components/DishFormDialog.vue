@@ -36,7 +36,6 @@
           <v-spacer></v-spacer>
           <v-btn @click="close">Cancel</v-btn>
           <v-btn @click="postDish">Save</v-btn>
-          <!--Endre click event til post-->
         </v-card-actions>
       </v-card>
     </v-dialog>
