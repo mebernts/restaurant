@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>This is the menu</h1>
+       <h1 class="black--text  text-center">Our menu</h1>
         <h2>Appetizers</h2>
         <AppertizerList/>
         <h2>Dishes</h2>
