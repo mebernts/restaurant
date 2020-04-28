@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import FooterStore from '@/Stores/FooterStore.js'
+import FooterStore from '@/stores/FooterStore.js'
 export default {
     name: "TheFooter",
     data(){

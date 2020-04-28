@@ -11,7 +11,8 @@
           </template>
           <template v-slot:item.actions="{ item }">
             <v-btn small class="mr-2 mb-2" @click="editItem(item)">Edit</v-btn>
-            <v-btn small class="mr-2 mb-2 " @click="deleteItem(item)">Delete</v-btn>
+            
+            <v-btn small class="mr-2 mb-2" @click="deleteItem(item)">Delete</v-btn>
             <EditFormDialog :dialog2.sync="dialog2" :editId.sync="editId" :editTable.sync="editTable"/>
           </template>
         </v-data-table>
@@ -54,6 +55,7 @@ export default {
   },
   created() {
     axios.get("https://localhost:5001/resturant/drinks").then(result => {
+      //console.log(result.data);
       this.dishes = result.data;
     }); // axios that gets information from the database
   },
@@ -61,6 +63,9 @@ export default {
     deleteItem(item) {
       alert("Id:" +item.id + " " + item.name + " Has been deleted");
       axios.delete(`https://localhost:5001/resturant/deleteDrink/${item.id}`)
+                .then( result => {
+                    this.deleteStatus = JSON.stringify(result.data)    
+                })
                 .catch((error) => {
                     console.log(error)
                 });
