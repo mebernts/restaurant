@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       dialog: false,
+      dialog2: false,
       component: "AppertizerTable",
       componentKey: 0
     };
@@ -53,6 +54,10 @@ export default {
   methods: {
     reRender() {
       this.componentKey += 1;
+    },
+    close() {
+      this.dialog2=false
+      this.dialog=false
     }
   }
 };

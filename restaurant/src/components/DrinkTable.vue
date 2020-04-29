@@ -73,18 +73,14 @@ export default {
   },
   created() {
     axios.get("https://localhost:5001/resturant/drinks").then(result => {
-      //console.log(result.data);
       this.dishes = result.data;
-    }); // axios that gets information from the database
+    });
   },
   methods: {
     deleteItem(item) {
       alert("Id:" + item.id + " " + item.name + " Has been deleted");
       axios
         .delete(`https://localhost:5001/resturant/deleteDrink/${item.id}`)
-        .then(result => {
-          this.deleteStatus = JSON.stringify(result.data);
-        })
         .catch(error => {
           console.log(error);
         });
@@ -97,6 +93,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>
