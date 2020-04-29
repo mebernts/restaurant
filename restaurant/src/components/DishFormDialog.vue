@@ -61,7 +61,7 @@ export default {
       dishCategory: ["Appertizer", "Dishes", "Drinks"],
       categoryList: [
         "Antipasti",
-        "Pizza Rossa",
+        "Pizza Rosse",
         "Pizza Bianche",
         "la Pasta",
         "Brus",
@@ -193,8 +193,6 @@ export default {
       }
       alert("A new Dish has been added!")
       this.$emit('update:dialog', false);
-        //this.$router.go()
-      // base til hvordan det fungerer
     }
   }
 };

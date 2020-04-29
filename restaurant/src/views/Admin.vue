@@ -3,17 +3,19 @@
     <v-row>
       <v-container cols="12">
         <v-col cols="12" class="mx-auto">
-          <v-toolbar>
-            <v-toolbar-title>Admin</v-toolbar-title>
+          <v-toolbar class="blue-grey darken-2 white--text">
+            <v-toolbar-title class="font-weight-medium">ADMIN</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn @click="reRender">
+              <v-icon>mdi-refresh</v-icon>
+            </v-btn>
           </v-toolbar>
           <v-col cols="12" md="8">
             <v-btn class="mr-2" @click="component='AppertizerTable'">Appertizers</v-btn>
             <v-btn class="mr-2" @click="component='DishTable'">Main Dishes</v-btn>
             <v-btn class="mr-2" @click="component='DrinkTable'">Drinks</v-btn>
-            <v-btn class="mr-2 primary Dark" @click="dialog=true">Add new Dish</v-btn>
-            <v-btn @click="reRender">
-              <v-icon>mdi-refresh</v-icon>
-            </v-btn>
+            <v-btn class="mr-2 primary white--text" @click="dialog=true">Add new Dish</v-btn>
+            
             <DishFormDialog :dialog.sync="dialog" />
           </v-col>
         </v-col>
@@ -35,7 +37,7 @@ export default {
   data() {
     return {
       dialog: false,
-      component: "DishTable",
+      component: "AppertizerTable",
       componentKey: 0
     };
   },

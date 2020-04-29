@@ -55,7 +55,7 @@ export default {
       file: null,
       categoryList: [
         "Antipasti",
-        "Pizza Rossa",
+        "Pizza Rosse",
         "Pizza Bianche",
         "la Pasta",
         "Brus",

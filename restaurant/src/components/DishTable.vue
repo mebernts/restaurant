@@ -2,17 +2,38 @@
   <div>
     <v-row>
       <v-col cols="12">
-        <v-data-table dense :headers="headers" :items="dishes" :page.sync="page" :items-per-page="itemsPerPage"
-      hide-default-footer @page-count="pageCount = $event" class="elevation-1">
+        <v-data-table
+          dense
+          :headers="headers"
+          :items="dishes"
+          :page.sync="page"
+          :items-per-page="itemsPerPage"
+          hide-default-footer
+          @page-count="pageCount = $event"
+          class="elevation-1"
+        >
           <template v-slot:top>
-            <v-toolbar flat>
+            <v-toolbar class="blue-grey darken-1 white--text" flat>
               <v-toolbar-title vertical>Dishes</v-toolbar-title>
             </v-toolbar>
           </template>
+          <v-divider></v-divider>
           <template v-slot:item.actions="{ item }">
-            <v-btn small class="mr-2 mb-2" @click="editItem(item)">Edit</v-btn>
-            <v-btn small class="mr-2 mb-2" @click="deleteItem(item)">Delete</v-btn>
-            <EditFormDialog :dialog2.sync="dialog2" :editId.sync="editId" :editTable.sync="editTable"/>
+            <v-btn
+              small
+              class="mr-2 mb-1 mt-1 blue-grey darken-1 white--text"
+              @click="editItem(item)"
+            >Edit</v-btn>
+            <v-btn
+              small
+              class="mr-2 mb-1 mt-1 blue-grey darken-1 white--text"
+              @click="deleteItem(item)"
+            >Delete</v-btn>
+            <EditFormDialog
+              :dialog2.sync="dialog2"
+              :editId.sync="editId"
+              :editTable.sync="editTable"
+            />
           </template>
         </v-data-table>
         <v-pagination v-model="page" :length="pageCount"></v-pagination>
@@ -44,8 +65,8 @@ export default {
         { text: "Allergies", value: "allergies", sortable: false },
         { text: "Price (KR)", value: "price" },
         { text: "ImageSrc", value: "imageSrc", sortable: false },
-        { text: "Category", value: "category", width: "150px" },
-        { text: "Actions", value: "actions", sortable: false, width: "200px" }
+        { text: "Category", value: "category" },
+        { text: "Actions", value: "actions", sortable: false,  }
       ],
       dishes: [],
       editId: 0,
@@ -75,10 +96,10 @@ export default {
           console.log(error);
         });
     },
-    editItem(item){  
-      this.editId = item.id 
-      this.editTable = "Dishes"
-      this.dialog2=true
+    editItem(item) {
+      this.editId = item.id;
+      this.editTable = "Dishes";
+      this.dialog2 = true;
     }
   }
 };

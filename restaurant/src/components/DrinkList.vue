@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row>
-            <v-col cols="12" sm="6" lg="4" v-for="drink in drinks" :key="drink.id">
+            <v-col cols="12" sm="6" lg="4" xl="3" v-for="drink in drinks" :key="drink.id">
                 <DrinkItem
                 :id="drink.id"
                 :name="drink.name"

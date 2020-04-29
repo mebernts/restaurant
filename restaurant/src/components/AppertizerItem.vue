@@ -8,8 +8,9 @@
             <v-card-title>{{name}}</v-card-title>
             <v-card-text>{{description}}</v-card-text>
             <v-card-text>{{allergies}}</v-card-text>
-            <v-card-text>{{price}}</v-card-text>
-            <v-card-text>{{category}}</v-card-text>
+            <v-card-text >{{category}}
+                <span class="subtitle float-right font-weight-bold">{{price}} Kr</span></v-card-text>
+            <v-card-text></v-card-text>
              <v-rating
              color="amber"
              background-color="grey lighten-3"

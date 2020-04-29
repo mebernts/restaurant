@@ -1,7 +1,7 @@
 <template>
    <div>
        <v-row>
-           <v-col cols="12" sm="6" lg="4" v-for="dish in dishes" :key="dish.id">
+           <v-col cols="12" sm="6" lg="4" xl="3" v-for="dish in dishes" :key="dish.id">
                <DishItem 
                :id="dish.id"
                :name="dish.name"
