@@ -1,11 +1,11 @@
 <template>
     <div>
-       <h1 class="black--text  text-center">Our Menu</h1>
-        <h2>Appetizers</h2>
+       <h1 class="black--text  text-center">Meny</h1>
+        <h2>Forretter </h2>
         <AppertizerList/>
-        <h2>Dishes</h2>
+        <h2>Hovedretter</h2>
         <DishList/>
-        <h2>Drinks</h2>
+        <h2>Drikke</h2>
         <DrinkList/>
     </div>
 </template>
