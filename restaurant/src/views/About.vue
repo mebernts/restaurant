@@ -4,7 +4,7 @@
 
       
       <v-col cols="12" sm="6" lg="4">
-        <h1 class="black--text  text-center">About</h1>
+        <h1 id="headline" class="white--text  text-center">About</h1>
 
       <v-img class="imgFluid" src="@/assets/images/restaurant.jpg"
       width="1000px"
@@ -41,6 +41,11 @@ export default {
 #about{
   font-family: 'Comic Neue', cursive;
   padding: 50px;
+  font-size: 19px;
 }
 
+#headline {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color:darkslategray;
+}
 </style>
