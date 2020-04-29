@@ -1,6 +1,6 @@
 <template>
     <div>
-       <h1 class="black--text  text-center">Our menu</h1>
+       <h1 class="black--text  text-center">Our Menu</h1>
         <h2>Appetizers</h2>
         <AppertizerList/>
         <h2>Dishes</h2>
@@ -15,7 +15,7 @@ import AppertizerList from '@/components/AppertizerList.vue'
 import DishList from '@/components/DishList.vue'
 import DrinkList from '@/components/DrinkList.vue'
 export default {
-    name: 'menu',
+    name: 'Menu',
     components:{
         AppertizerList,
         DishList,

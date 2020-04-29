@@ -21,8 +21,7 @@
                 <v-btn class="white--text blue-grey darken-2 text-center font-weight-bold elevation-10" x-large to="/menu" >Se meny her</v-btn>
               </v-flex>
             </v-layout>
-          </v-container>
-          
+          </v-container>  
         </v-img>
       </v-col>
 

@@ -36,11 +36,13 @@
             </v-row>
           </v-container>
         </v-card-text>
+
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn @click="close">Cancel</v-btn>
           <v-btn @click="putDish">Save</v-btn>
         </v-card-actions>
+
       </v-card>
     </v-dialog>
   </v-row>
@@ -94,8 +96,6 @@ export default {
           .get(`https://localhost:5001/resturant/Getdish/${this.editId}`)
           .then(result => {
             this.editDish = result.data;
-            console.log(this.editId);
-            console.log(this.editDish);
           })
           .catch(error => {
             console.log(error);
@@ -105,8 +105,6 @@ export default {
           .get(`https://localhost:5001/resturant/Getdrink/${this.editId}`)
           .then(result => {
             this.editDish = result.data;
-            console.log(this.editId);
-            console.log(this.editDish);
           })
           .catch(error => {
             console.log(error);
@@ -116,8 +114,6 @@ export default {
           .get(`https://localhost:5001/resturant/Getappertizer/${this.editId}`)
           .then(result => {
             this.editDish = result.data;
-            console.log(this.editId);
-            console.log(this.editDish);
           })
           .catch(error => {
             console.log(error);
@@ -142,7 +138,6 @@ export default {
           axios
             .put("https://localhost:5001/Resturant/Putdish", this.editDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
 
               axios({
@@ -173,7 +168,6 @@ export default {
           axios
             .put("https://localhost:5001/Resturant/Putdrink", this.editDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
 
               axios({
@@ -192,19 +186,24 @@ export default {
           this.editDish.imageSrc = null;
 
           axios
-          .put("https://localhost:5001/resturant/PutAppertizer/", this.editDish)
-          .catch(error => {
-            console.log(error);
-          });
+            .put(
+              "https://localhost:5001/resturant/PutAppertizer/",
+              this.editDish
+            )
+            .catch(error => {
+              console.log(error);
+            });
         } else {
           let data = new FormData();
           data.append("file", this.file);
           this.editDish.imageSrc = this.file.name;
 
           axios
-          .put("https://localhost:5001/resturant/PutAppertizer/", this.editDish)
-           .then(result => {
-              this.postStatus = JSON.stringify(result.data);
+            .put(
+              "https://localhost:5001/resturant/PutAppertizer/",
+              this.editDish
+            )
+            .then(result => {
               console.log(result.data);
 
               axios({
@@ -218,7 +217,6 @@ export default {
               console.log(error);
             });
         }
-        
       }
       this.$emit("update:dialog2", false);
     }

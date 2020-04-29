@@ -27,9 +27,8 @@ export default {
     created(){
         axios.get("https://localhost:5001/resturant/dishes")
         .then(result =>{
-            console.log(result.data);
             this.dishes = result.data;
-        }) // axios that gets information from the database
+        })
     },
     components:{
         DishItem

@@ -70,7 +70,7 @@ export default {
       ],
       dishes: [],
       editId: 0,
-      editTalbe: ""
+      editTable: ""
     };
   },
   components: {
@@ -78,9 +78,8 @@ export default {
   },
   created() {
     axios.get("https://localhost:5001/resturant/dishes").then(result => {
-      //console.log(result.data);
       this.dishes = result.data;
-    }); // axios that gets information from the database
+    }); 
   },
   methods: {
     deleteItem(item) {
@@ -89,9 +88,6 @@ export default {
       );
       axios
         .delete(`https://localhost:5001/resturant/deleteDish/${item.id}`)
-        .then(result => {
-          this.deleteStatus = JSON.stringify(result.data);
-        })
         .catch(error => {
           console.log(error);
         });
@@ -104,6 +100,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

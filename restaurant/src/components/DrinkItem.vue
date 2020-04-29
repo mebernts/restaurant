@@ -1,9 +1,6 @@
 <template>
     <article>
         <v-card>
-            <!--<v-img :src="`https://localhost:5001/images/${imageSrc}`"
-            height="200px">
-            </v-img>-->
             <v-card-title>{{name}}</v-card-title>
             <v-card-text>
                 <span>{{category}}</span>

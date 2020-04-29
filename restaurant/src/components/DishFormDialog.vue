@@ -15,7 +15,7 @@
                 <v-text-field v-model="newDish.name" label="Name"></v-text-field>
               </v-col>
               <v-col cols="12" md="6">
-                <v-select v-model="newDish.category" :items="categoryList" label="Category" ></v-select>
+                <v-select v-model="newDish.category" :items="categoryList" label="Category"></v-select>
               </v-col>
               <v-col cols="12">
                 <v-textarea v-model="newDish.description" label="Description" auto-grow></v-textarea>
@@ -146,7 +146,10 @@ export default {
           this.newDish.imageSrc = null;
 
           axios
-            .post("https://localhost:5001/resturant/postappertizer", this.newDish)
+            .post(
+              "https://localhost:5001/resturant/postappertizer",
+              this.newDish
+            )
             .catch(error => {
               console.log(error);
             });
@@ -156,7 +159,10 @@ export default {
           this.newDish.imageSrc = this.file.name;
 
           axios
-            .post("https://localhost:5001/Resturant/postappertizer", this.newDish)
+            .post(
+              "https://localhost:5001/Resturant/postappertizer",
+              this.newDish
+            )
             .then(result => {
               console.log(result.data);
 
@@ -171,10 +177,9 @@ export default {
               console.log(error);
             });
         }
-        
       }
-      alert("A new Dish has been added!")
-      this.$emit('update:dialog', false);
+      alert("A new Dish has been added!");
+      this.$emit("update:dialog", false);
     }
   }
 };

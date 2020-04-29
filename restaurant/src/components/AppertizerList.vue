@@ -27,9 +27,8 @@ export default {
     created(){
         axios.get("https://localhost:5001/resturant/appertizer")
         .then(result =>{
-            console.log(result.data);
             this.appertizers = result.data;
-        }) // axios that gets information from the database
+        })
     },
     components:{
         AppertizerItem

@@ -23,7 +23,7 @@ namespace ResturantAPI.Controllers
             _hosting = hosting;
         }
 
-        //Start på Route til de forskjellige tabellene i databasen
+        //Routes
 
         [HttpGet]
         [Route("[action]")]
@@ -110,9 +110,9 @@ namespace ResturantAPI.Controllers
             Appertizer chosenAppertizer = await _context.Appertizer.FirstOrDefaultAsync(appertizer => appertizer.Id == id);
             return chosenAppertizer;
         }
-// Get request Ends
+        // Get request Ends
 
-// Put request Starts
+        // Put request Starts
         
         [HttpPut]
         [Route("[action]")]
@@ -139,9 +139,8 @@ namespace ResturantAPI.Controllers
             await _context.SaveChangesAsync();
             return changeAppertizer;
         }
-//Put request ends
 
-// delete request starts
+        // Delete Requests Start
         
         [HttpDelete("{id}")]
         [Route("[action]/{id}")]
@@ -171,12 +170,6 @@ namespace ResturantAPI.Controllers
              await _context.SaveChangesAsync();
             return deleteAppertizer;
         }
-
-//Delete request ends
-
-        // GET, POST, DELETE og ADD Start bruk "id" for get. 
-    
-
 
     }
 }
