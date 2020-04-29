@@ -14,7 +14,7 @@
   <v-img class="imgFluid" src="@/assets/images/meny.jpg"
   width="500px"
   height="350px">
-   <v-btn class="white--text  text-center" to="/menu">Se meny her</v-btn>
+   <v-btn class="black--text  text-center" to="/menu">Se meny her</v-btn>
   </v-img>
   </v-col>
 
@@ -28,7 +28,7 @@
    <v-img class="align-items imgFluid" src="@/assets/images/about.jpg"
   width="500px"
   height="350px">
-   <v-btn class="white--text  text-center" to="/about">Les om oss</v-btn>
+   <v-btn class="black--text  text-center" to="/about">Les om oss</v-btn>
   </v-img>
   </v-col>
 
