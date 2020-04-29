@@ -13,8 +13,8 @@
     som skinner av fellesskap og lidenskap samt dyktige og lekne kokker 
     – akkurat som i en italiensk familie.
 
-Olivia åpnet for første gang dørene på Aker Brygge i 2006 med en meny 
-som senere har blitt kjernen i alle Olivia-restaurantene; steinovnsbakt, 
+Italia åpnet for første gang dørene på Aker Brygge i 2006 med en meny 
+som senere har blitt kjernen i alle Italia-restaurantene; steinovnsbakt, 
 tynn pizza, klassiske pastaretter, antipasti, salater, supper, kjøtt og ikoniske desserter. 
 Det italienske kjøkken verdsetter få, men veldig gode råvarer og dette har vi selvfølgelig adoptert.
 
@@ -31,6 +31,6 @@ export default {
 </script>
 
 <style scoped>
-  
+
 
 </style>
