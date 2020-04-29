@@ -40,6 +40,7 @@ export default {
 <style scoped>
 #about{
   font-family: 'Comic Neue', cursive;
+  padding: 50px;
 }
 
 </style>
