@@ -87,11 +87,6 @@ export default {
 
           axios
             .post("https://localhost:5001/resturant/Postdish", this.newDish)
-            .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-            })
-
             .catch(error => {
               console.log(error);
             });
@@ -103,7 +98,6 @@ export default {
           axios
             .post("https://localhost:5001/Resturant/Postdish", this.newDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
 
               axios({
@@ -123,11 +117,6 @@ export default {
 
           axios
             .post("https://localhost:5001/resturant/postdrink", this.newDish)
-            .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-            })
-
             .catch(error => {
               console.log(error);
             });
@@ -139,7 +128,6 @@ export default {
           axios
             .post("https://localhost:5001/Resturant/postdrink", this.newDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
 
               axios({
@@ -159,11 +147,6 @@ export default {
 
           axios
             .post("https://localhost:5001/resturant/postappertizer", this.newDish)
-            .then(result => {
-              this.postStatus = JSON.stringify(result.data);
-              console.log(result.data);
-            })
-
             .catch(error => {
               console.log(error);
             });
@@ -175,7 +158,6 @@ export default {
           axios
             .post("https://localhost:5001/Resturant/postappertizer", this.newDish)
             .then(result => {
-              this.postStatus = JSON.stringify(result.data);
               console.log(result.data);
 
               axios({
