@@ -12,7 +12,7 @@
             <v-card-text>{{category}}</v-card-text>
              <v-rating
              color="amber"
-             background-color="black"
+             background-color="grey lighten-3"
              half-increments
              size="20">
              </v-rating>
