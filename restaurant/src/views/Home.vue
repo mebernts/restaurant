@@ -26,6 +26,15 @@
    <h1 class="white--text  text-center">Les om oss</h1>
   </v-img>
   </v-col>
+
+
+   <v-col cols="12" sm="6" lg="4">
+  <v-img class="imgFluid" src="@/assets/images/matbilde.jpg"
+  width="500px"
+  height="350px">
+  </v-img>
+  </v-col>
+
   </v-row>
   
 
