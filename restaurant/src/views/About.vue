@@ -4,7 +4,7 @@
 
       
       <v-col cols="12" sm="6" lg="4">
-        <h1 id="headline" class="black--text  text-center">About</h1>
+        <h1 id="headline" class="black--text  text-center">Om Oss</h1>
 
       <v-img class="imgFluid" src="@/assets/images/restaurant.jpg"
       width="1000px"
