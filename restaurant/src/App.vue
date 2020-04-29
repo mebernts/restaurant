@@ -1,6 +1,6 @@
 <template>
 <v-app>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,700;1,700&family=Dancing+Script&display=swap" rel="stylesheet">
   <div id="app">
     <TheNavigation/>
     <v-content>

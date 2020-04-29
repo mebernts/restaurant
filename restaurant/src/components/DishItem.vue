@@ -9,7 +9,7 @@
         {{category}}
         <span class="subtitle float-right font-weight-bold">{{price}} Kr</span>
       </v-card-text>
-      <v-rating color="amber" background-color="grey lighten-3" half-increments size="20"></v-rating>
+      <v-rating color="amber" background-color="grey darken-1" half-increments size="20"></v-rating>
     </v-card>
   </article>
 </template>
