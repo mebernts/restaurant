@@ -14,7 +14,7 @@
         >
           <template v-slot:top>
             <v-toolbar class="blue-grey darken-1 white--text" flat>
-              <v-toolbar-title vertical>Dishes</v-toolbar-title>
+              <v-toolbar-title>DISHES</v-toolbar-title>
             </v-toolbar>
           </template>
           <v-divider></v-divider>
@@ -66,7 +66,7 @@ export default {
         { text: "Price (KR)", value: "price" },
         { text: "ImageSrc", value: "imageSrc", sortable: false },
         { text: "Category", value: "category" },
-        { text: "Actions", value: "actions", sortable: false,  }
+        { text: "Actions", value: "actions", sortable: false, width: "180px"}
       ],
       dishes: [],
       editId: 0,

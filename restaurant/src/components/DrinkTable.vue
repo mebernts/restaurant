@@ -14,7 +14,7 @@
         >
           <template v-slot:top>
             <v-toolbar class="blue-grey darken-1 white--text" flat>
-              <v-toolbar-title vertical>Drinks</v-toolbar-title>
+              <v-toolbar-title>DRINKS</v-toolbar-title>
             </v-toolbar>
           </template>
           <template v-slot:item.actions="{ item }">
@@ -61,7 +61,7 @@ export default {
         { text: "Drinks", value: "name" },
         { text: "Price (KR)", value: "price" },
         { text: "Category", value: "category" },
-        { text: "Actions", value: "actions", sortable: false }
+        { text: "Actions", value: "actions", sortable: false, width:"180px" }
       ],
       dishes: [],
       editId: 0,
