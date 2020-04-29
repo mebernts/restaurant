@@ -13,7 +13,7 @@
             <v-card-text></v-card-text>
              <v-rating
              color="amber"
-             background-color="grey lighten-3"
+             background-color="grey darken-1"
              half-increments
              size="20">
              </v-rating>
